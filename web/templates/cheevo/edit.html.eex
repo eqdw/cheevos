@@ -1,0 +1,6 @@
+<h2>Edit cheevo</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: cheevo_path(@conn, :update, @cheevo) %>
+
+<%= link "Back", to: cheevo_path(@conn, :index) %>

@@ -1,0 +1,30 @@
+<h2>Listing cheevos</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Achieved</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for cheevo <- @cheevos do %>
+    <tr>
+      <td><%= cheevo.name %></td>
+      <td><%= cheevo.description %></td>
+      <td><%= cheevo.achieved %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: cheevo_path(@conn, :show, cheevo), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: cheevo_path(@conn, :edit, cheevo), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: cheevo_path(@conn, :delete, cheevo), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New cheevo", to: cheevo_path(@conn, :new) %>
