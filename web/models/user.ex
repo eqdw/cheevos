@@ -6,6 +6,8 @@ defmodule Cheevos.User do
     field :email, :string
     field :encrypted_password, :string
 
+    has_many :achievement_templates, Cheevos.AchievementTemplate
+
     timestamps()
   end
 

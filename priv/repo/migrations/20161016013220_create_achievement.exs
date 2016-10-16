@@ -5,6 +5,7 @@ defmodule Cheevos.Repo.Migrations.CreateAchievement do
     create table(:achievements) do
       add :title, :string
       add :description, :string
+      add :creator_id, references(:users)
 
       timestamps()
     end
