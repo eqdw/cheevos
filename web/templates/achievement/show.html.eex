@@ -1,0 +1,18 @@
+<h2>Show achievement</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @achievement.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @achievement.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: achievement_path(@conn, :edit, @achievement) %>
+<%= link "Back", to: achievement_path(@conn, :index) %>

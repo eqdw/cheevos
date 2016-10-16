@@ -1,0 +1,28 @@
+<h2>Listing achievements</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for achievement <- @achievements do %>
+    <tr>
+      <td><%= achievement.title %></td>
+      <td><%= achievement.description %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: achievement_path(@conn, :show, achievement), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: achievement_path(@conn, :edit, achievement), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: achievement_path(@conn, :delete, achievement), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New achievement", to: achievement_path(@conn, :new) %>
